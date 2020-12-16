@@ -1,0 +1,9 @@
+%h1 Movie Log
+%p おすすめの映画を紹介しています
+
+- @works.each_with_index do |work, index|
+  #{index + 1}.
+  =link_to work.title, work_path(work)
+  %br
+%hr
+=link_to "新しい映画を登録", new_work_path

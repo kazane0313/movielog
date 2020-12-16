@@ -1,0 +1,13 @@
+Movie Title：#{@work.title}
+%br
+Release Date：#{@work.release}
+%br
+Starring：#{@work.starring}
+%br
+Description :#{@work.explanation}
+%hr
+=link_to "一覧に戻る", works_path
+%br
+=link_to "登録内容を編集する", edit_work_path(@work)
+%br
+=link_to "削除する", work_path(@work), method: :delete, data: {confirm: "削除しますか？"}
