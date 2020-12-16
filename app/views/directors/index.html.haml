@@ -1,0 +1,9 @@
+%h1 Movie Log
+%p おすすめの映画を紹介しています
+
+- @directors.each_with_index do |director, index|
+  #{index + 1}.
+  =link_to director.name, director_path(director)
+  %br
+%hr
+=link_to "新しい監督を登録", new_director_path
