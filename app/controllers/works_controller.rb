@@ -10,6 +10,7 @@ class WorksController < ApplicationController
 
   def new
     @work = Work.new
+    @work.director_id = params[:director_id] if params[:director_id]
   end
 
   def create
@@ -46,6 +47,7 @@ class WorksController < ApplicationController
       :release,
       :starring,
       :explanation,
+      :director_id,
     )
   end
   def set_work

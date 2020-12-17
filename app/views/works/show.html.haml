@@ -4,6 +4,23 @@ Release Date：#{@work.release}
 %br
 Starring：#{@work.starring}
 %br
+Director :
+=link_to @work.director.name, director_path(@work.director)
+-# - director = Director.find(@work.director_id)
+-# Director :#{director.name}
+%br
+
+-# - exit
+- if @work.director.works.length > 1
+  [Related Works]
+  %br
+  - index = 0
+  - @work.director.works.each do |work|
+    -if @work != work
+      #{index + 1}.
+      =link_to "#{work.title} (#{work.release})", work_path(work)
+      %br
+
 Description :#{@work.explanation}
 %hr
 =link_to "一覧に戻る", works_path
