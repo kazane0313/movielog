@@ -16,8 +16,10 @@
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     -# = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
   %body
+    = render "header"
     = notice if notice
     -# -if notice
     -#   = notice
     = yield
+    = render "footer"
     = javascript_include_tag "application"
