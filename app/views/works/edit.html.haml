@@ -1,4 +1,8 @@
 .container.pt-3.pb-3
   %h2 EDIT
   =render 'form'
-  =link_to "詳細ページへ戻る", work_path(@work)
+  %hr
+  -# =link_to "> Back", work_path(@work)
+  =link_to work_path(@work) do
+    %button.btn.btn-outline-secondary{:type => "button"} > Back
+  -# <button type="button" class="btn btn-outline-secondary">Secondary</button>

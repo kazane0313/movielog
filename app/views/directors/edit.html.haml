@@ -2,4 +2,6 @@
   %h2 EDIT
   =render 'form'
   %hr
-  =link_to "詳細ページへ戻る", director_path(@director)
+  -# =link_to "詳細ページへ戻る", director_path(@director)
+  =link_to director_path(@director) do
+    %button.btn.btn-outline-secondary{:type => "button"} > Back

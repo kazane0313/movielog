@@ -57,3 +57,12 @@
                 - @director.works.each do |work|
                   %li
                     =link_to "#{work.title} (#{work.release})", work_path(work)
+        %hr
+      =link_to directors_path, class:"btn" do
+        %button.btn.btn-outline-secondary{:type => "button"} > Back
+      =link_to edit_director_path(@director), class:"btn" do
+        %button.btn.btn-outline-warning{:type => "button"} Edit
+      =link_to new_work_path(director_id: @director.id), class:"btn" do
+        %button.btn.btn-outline-info{:type => "button"} Add New Movie
+      =link_to director_path(@director), method: :delete, data: {confirm: "削除しますか？"}, class:"btn" do
+        %button.btn.btn-outline-dark{:type => "button"} Delete

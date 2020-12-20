@@ -58,27 +58,10 @@
                   -if @work != work
                     %li
                       =link_to "#{work.title} (#{work.release})", work_path(work)
-              -# %p
-              -#   %a.readmore{:href => "#"} Visit Website
-      / ======= Testimonials Section =======
-      -# %section.section.pt-0
-      -#   .container
-      -#     .owl-carousel.testimonial-carousel
-      -#       .testimonial-wrap
-      -#         .testimonial
-      -#           %img.img-fluid{:alt => "Image", :src => "/img/person_1.jpg"}/
-      -#           %blockquote
-      -#             %p
-      -#               Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam necessitatibus incidunt ut officiis
-      -#               explicabo inventore.
-      -#           %p — Jean Hicks
-      -#       .testimonial-wrap
-      -#         .testimonial
-      -#           %img.img-fluid{:alt => "Image", :src => "/img/person_2.jpg"}/
-      -#           %blockquote
-      -#             %p
-      -#               Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam necessitatibus incidunt ut officiis
-      -#               explicabo inventore.
-      -#           %p — Chris Stanworth
-      -# / End Testimonials Section
-      -# / End #main
+        %hr
+      =link_to works_path, class:"btn" do
+        %button.btn.btn-outline-secondary{:type => "button"} > Back
+      =link_to edit_work_path(@work), class:"btn" do
+        %button.btn.btn-outline-warning{:type => "button"} Edit
+      =link_to work_path(@work), method: :delete, data: {confirm: "削除しますか？"}, class:"btn" do
+        %button.btn.btn-outline-dark{:type => "button"} Delete

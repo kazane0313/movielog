@@ -1,3 +1,6 @@
 .container.pt-3.pb-3
   %h2 Add New director
   =render 'form'
+  %hr
+    =link_to directors_path do
+      %button.btn.btn-outline-secondary{:type => "button"} > Back to List
