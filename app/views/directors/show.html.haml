@@ -1,18 +1,59 @@
-Director Name：#{@director.name}
-%br
-Country：#{@director.country}
-%br
-Works:
-%br
-- @director.works.each_with_index do |work, index|
-  #{index + 1}.
-  =link_to "#{work.title} (#{work.release})", work_path(work)
-  %br
-%hr
-=link_to "一覧に戻る", directors_path
-%br
-=link_to "登録内容を編集する", edit_director_path(@director)
-%br
-=link_to "削除する", director_path(@director), method: :delete, data: {confirm: "削除しますか？"}
-%br
-=link_to 'Add new movie', new_work_path(director_id: @director.id)
+-# Director Name：#{@director.name}
+-# %br
+-# Country：#{@director.country}
+-# %br
+-# Works:
+-# %br
+-# - @director.works.each_with_index do |work, index|
+-#   #{index + 1}.
+-#   =link_to "#{work.title} (#{work.release})", work_path(work)
+-#   %br
+-# %hr
+-# =link_to "一覧に戻る", directors_path
+-# %br
+-# =link_to "登録内容を編集する", edit_director_path(@director)
+-# %br
+-# =link_to "削除する", director_path(@director), method: :delete, data: {confirm: "削除しますか？"}
+-# %br
+-# =link_to 'Add new movie', new_work_path(director_id: @director.id)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%main#main
+  %section.section
+    .container
+      .row.mb-4.align-items-center
+        .col-md-6{"data-aos" => "fade-up"}
+          %h2=@director.name
+          %p=@director.country
+      .container
+        .row.align-items-stretch
+          .col-md-8{"data-aos" => "fade-up"}
+            %img.img-fluid{:alt => "Image", :src => "/img/img_1_big.jpg"}/
+          .col-md-3.ml-auto{"data-aos" => "fade-up", "data-aos-delay" => "100"}
+            .sticky-content
+              -# %h3.h3
+              -#   =link_to @work.director.name, director_path(@work.director)
+              -# %p.mb-4
+              -#   %span.text-muted=@work.director.country
+              -# %p.mb-4
+              -#   %span.text-muted=@work.starring
+              -# .mb-5
+              -#   %p
+              -#     =@work.explanation
+              %h4.h4.mb-3 WORKS
+              %ul.list-unstyled.list-line.mb-5
+                - @director.works.each do |work|
+                  %li
+                    =link_to "#{work.title} (#{work.release})", work_path(work)

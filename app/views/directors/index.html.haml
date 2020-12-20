@@ -1,9 +1,41 @@
-%h1 Movie Log
-%p おすすめの映画を紹介しています
+-# %h1 Movie Log
+-# %p おすすめの映画を紹介しています
+-#
+-# - @directors.each_with_index do |director, index|
+-#   #{index + 1}.
+-#   =link_to director.name, director_path(director)
+-#   %br
+-# %hr
+-# =link_to "新しい監督を登録", new_director_path
 
-- @directors.each_with_index do |director, index|
-  #{index + 1}.
-  =link_to director.name, director_path(director)
-  %br
-%hr
-=link_to "新しい監督を登録", new_director_path
+
+
+
+%main#main
+  / ======= Directors Section =======
+  %section.section.site-portfolio
+    .container
+      .row.mb-5.align-items-center
+        .col-md-12.col-lg-6.mb-4.mb-lg-0{"data-aos" => "fade-up"}
+          %h2 List of Directors
+          %p.mb-0
+        .col-md-12.col-lg-6.text-left.text-lg-right{"data-aos" => "fade-up", "data-aos-delay" => "100"}
+          #filters.filters
+            %a.active{"data-filter" => "*", :href => "#"} ALL
+            %a{"data-filter" => ".web", :href => "#"} ACTION
+            %a{"data-filter" => ".design", :href => "#"} ROMANCE
+            %a{"data-filter" => ".branding", :href => "#"} DRAMA
+            %a{"data-filter" => ".photography", :href => "#"} ANIME
+      #portfolio-grid.row.no-gutter{"data-aos" => "fade-up", "data-aos-delay" => "200"}
+        -@directors.each_with_index do |director, index|
+          .item.web.col-sm-6.col-md-4.col-lg-4.mb-4
+            -# %a.item-wrap.fancybox{:href => "director-single.html"}
+            =link_to director_path(director), class: 'item-wrap fancybox' do
+              .work-info
+                %h3=director.name
+                %span=director.country
+              %img.img-fluid{:src => "/img/img_1.jpg"}/
+
+      =link_to new_director_path do
+        %button.btn.btn-outline-info{:type => "button"} Add new director
+      -# =link_to "新しい映画を登録", new_director_path
