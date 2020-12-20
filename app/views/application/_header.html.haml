@@ -4,30 +4,14 @@
       .col-md-2
         %ul.custom-menu
           %li.active
-            %a{:href => "index.html"} Home
+            =link_to "Movies", works_path
           %li
-            %a{:href => "about.html"} About Me
+            =link_to "Directors", directors_path
           %li
-            %a{:href => "services.html"} Services
+            =link_to "Sign In", ()
           %li
-            %a{:href => "works.html"} Works
-          %li
-            %a{:href => "contact.html"} Contact
-      .col-md-6.d-none.d-md-block.mr-auto
-        .tweet.d-flex
-          %span.icofont-twitter.text-white.mt-2.mr-3
-          %div
-            %p
-              %em
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam necessitatibus incidunt ut officiis explicabo inventore.
-                %br/
-                %a{:href => "#"} t.co/v82jsk
-      .col-md-4.d-none.d-md-block
-        %h3 Hire Me
-        %p
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam necessitatibus incidunt ut officiisexplicabo inventore.
-          %br/
-          %a{:href => "#"} myemail@gmail.com
+            =link_to "Sign Up", ()
+      
 %nav.navbar.navbar-light.custom-navbar
   .container
     %a.navbar-brand{:href => "index.html"} Movie Log

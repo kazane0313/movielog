@@ -17,15 +17,15 @@
     .container
       .row.mb-5.align-items-center
         .col-md-12.col-lg-6.mb-4.mb-lg-0{"data-aos" => "fade-up"}
-          %h2 Movie Index
-          %p.mb-0 Choose your favorite movies!
+          %h2 List of Films
+          %p.mb-0 Let us find your favorite movie genre!
         .col-md-12.col-lg-6.text-left.text-lg-right{"data-aos" => "fade-up", "data-aos-delay" => "100"}
           #filters.filters
-            %a.active{"data-filter" => "*", :href => "#"} All
-            %a{"data-filter" => ".web", :href => "#"} Web
-            %a{"data-filter" => ".design", :href => "#"} Design
-            %a{"data-filter" => ".branding", :href => "#"} Branding
-            %a{"data-filter" => ".photography", :href => "#"} Photography
+            %a.active{"data-filter" => "*", :href => "#"} ALL
+            %a{"data-filter" => ".web", :href => "#"} ACTION
+            %a{"data-filter" => ".design", :href => "#"} ROMANCE
+            %a{"data-filter" => ".branding", :href => "#"} DRAMA
+            %a{"data-filter" => ".photography", :href => "#"} ANIME
       #portfolio-grid.row.no-gutter{"data-aos" => "fade-up", "data-aos-delay" => "200"}
         -@works.each_with_index do |work, index|
           .item.web.col-sm-6.col-md-4.col-lg-4.mb-4
