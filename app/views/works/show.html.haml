@@ -44,11 +44,11 @@
           .col-md-3.ml-auto{"data-aos" => "fade-up", "data-aos-delay" => "100"}
             .sticky-content
               %h3.h3
-                =link_to @work.director.name, director_path(@work.director)
+                Director: #{link_to @work.director.name, director_path(@work.director)}
               %p.mb-4
                 %span.text-muted=@work.director.country
               %p.mb-4
-                %span.text-muted=@work.starring
+                %span.text-muted Starring: #{@work.starring}
               .mb-5
                 %p
                   =@work.explanation
