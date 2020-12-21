@@ -1,4 +1,6 @@
 class Work < ApplicationRecord
+  mount_uploader :image, WorkImageUploader
+  
   belongs_to :director
 
   validates :title, presence: true

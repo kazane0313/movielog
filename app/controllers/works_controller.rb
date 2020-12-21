@@ -48,6 +48,9 @@ class WorksController < ApplicationController
       :starring,
       :explanation,
       :director_id,
+      :image,
+      :image_cache,
+      :remove_image,
     )
   end
   def set_work

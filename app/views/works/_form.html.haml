@@ -4,4 +4,12 @@
   =f.text_field :release
   =f.text_field :starring
   =f.text_area :explanation
+  =f.file_field :image
+  =f.hidden_field :image_cache
+  -if @work.image?
+    .m-t-5
+      =image_tag @work.image_url(:thumb)
+      .checkbox.checkbox-primary.m-t-5
+        =f.check_box_without_bootstrap :remove_image
+        =f.label :remove_image, 'Image Delete'
   =f.submit
