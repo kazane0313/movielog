@@ -14,6 +14,7 @@
 
 %nav.navbar.navbar-light.custom-navbar
   .container
-    %a.navbar-brand{:href => "works"} Movie Log
+    -# %a.navbar-brand{:href => "/works"} Movie Log
+    =link_to "Movie Log", works_path, class: 'navbar-brand'
     %a.burger{"data-target" => "#main-navbar", "data-toggle" => "collapse", :href => "#"}
       %span
