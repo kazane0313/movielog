@@ -44,6 +44,9 @@ class DirectorsController < ApplicationController
     params[:director].permit(
       :name,
       :country,
+      :image,
+      :image_cache,
+      :remove_image,
     )
   end
   def set_director
