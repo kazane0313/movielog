@@ -19,6 +19,11 @@
         .col-md-12.col-lg-6.mb-4.mb-lg-0{"data-aos" => "fade-up"}
           %h2 List of Directors
           %p.mb-0
+          .search_form
+            = search_form_for @q do |f|
+              = f.label :title, "Keyword"
+              = f.search_field :name_cont
+              = f.submit "search"
         .col-md-12.col-lg-6.text-left.text-lg-right{"data-aos" => "fade-up", "data-aos-delay" => "100"}
           #filters.filters
             %a.active{"data-filter" => "*", :href => "#"} ALL

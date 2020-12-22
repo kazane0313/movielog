@@ -1,7 +1,8 @@
 class DirectorsController < ApplicationController
   before_action :set_director,only: [:edit, :show, :update, :destroy]
   def index
-    @directors = Director.all.by_alphabet.page(params[:page]).per(6)
+    @q = Director.by_alphabet.ransack(params[:q])
+    @directors = @q.result(distinct: true).page(params[:page]).per(6)
   end
 
   def show

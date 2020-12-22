@@ -1,7 +1,8 @@
 class WorksController < ApplicationController
   before_action :set_work,only: [:edit, :show, :update, :destroy]
   def index
-    @works = Work.all.by_alphabet.page(params[:page]).per(6)
+    @q = Work.by_alphabet.ransack(params[:q])
+    @works = @q.result(distinct: true).page(params[:page]).per(6)
   end
 
   def show
