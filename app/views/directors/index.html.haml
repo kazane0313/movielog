@@ -39,6 +39,7 @@
                 =image_tag director.image_url(:thumb), class: 'img-fluid'
               -else
                 =image_tag '/img/default_image.png',class: 'img-fluid'
+      =paginate @directors
       =link_to new_director_path do
         %button.btn.btn-outline-info{:type => "button"} Add new director
       -# =link_to "新しい映画を登録", new_director_path
