@@ -1,6 +1,6 @@
 class Work < ApplicationRecord
   mount_uploader :image, WorkImageUploader
-  
+
   belongs_to :director
 
   validates :title, presence: true
@@ -10,5 +10,6 @@ class Work < ApplicationRecord
   validates :explanation, presence: true
 
   scope :by_alphabet, ->{ order(title: :asc) }
+  scope :by_position, ->{ order(position: :asc) }
   # scope :by_new, ->{ order(updated_at: :desc) }
 end

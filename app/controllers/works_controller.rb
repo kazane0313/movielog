@@ -1,7 +1,7 @@
 class WorksController < ApplicationController
   before_action :set_work,only: [:edit, :show, :update, :destroy]
   def index
-    @q = Work.by_alphabet.ransack(params[:q])
+    @q = Work.by_position.ransack(params[:q])
     @works = @q.result(distinct: true).page(params[:page]).per(6)
   end
 
@@ -38,6 +38,11 @@ class WorksController < ApplicationController
   def destroy
     @work.destroy
     redirect_to works_path, notice: "データを削除しました。"
+  end
+
+  def move_higher
+    Work.find(params[:id]).move_higher
+    redirect_to :action => 'index'
   end
 
   private
