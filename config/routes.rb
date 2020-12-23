@@ -5,4 +5,7 @@ Rails.application.routes.draw do
   resources :directors
   root to: 'works#index'
   # get 'home/index' => 'home#index'
+  namespace :login do
+    resource :profile
+  end
 end
