@@ -9,13 +9,15 @@
             =link_to "Directors", directors_path
           -if user_signed_in?
             %li
+              = link_to 'My Page', edit_mypage_profile_path
+            %li
               =link_to "Sign Out", destroy_user_session_path
           -else
             %li
               =link_to "Sign In", new_user_session_path
             %li
               =link_to "Sign Up", new_user_registration_path
-              
+
 %nav.navbar.navbar-light.custom-navbar
   .container
     -# %a.navbar-brand{:href => "/works"} Movie Log
