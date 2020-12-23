@@ -65,7 +65,8 @@
         %hr
       =link_to works_path, class:"btn" do
         %button.btn.btn-outline-secondary{:type => "button"} > Back
-      =link_to edit_work_path(@work), class:"btn" do
-        %button.btn.btn-outline-warning{:type => "button"} Edit
-      =link_to work_path(@work), method: :delete, data: {confirm: "削除しますか？"}, class:"btn" do
-        %button.btn.btn-outline-dark{:type => "button"} Delete
+      -if user_signed_in?
+        =link_to edit_login_work_path(@work), class:"btn" do
+          %button.btn.btn-outline-warning{:type => "button"} Edit
+        =link_to login_work_path(@work), method: :delete, data: {confirm: "削除しますか？"}, class:"btn" do
+          %button.btn.btn-outline-dark{:type => "button"} Delete

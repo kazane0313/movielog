@@ -45,6 +45,7 @@
               -else
                 =image_tag '/img/default_image.png',class: 'img-fluid'
       =paginate @directors
-      =link_to new_director_path do
-        %button.btn.btn-outline-info{:type => "button"} Add new director
+      -if user_signed_in?
+        =link_to new_login_director_path do
+          %button.btn.btn-outline-info{:type => "button"} Add new director
       -# =link_to "新しい映画を登録", new_director_path
