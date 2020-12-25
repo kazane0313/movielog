@@ -7,6 +7,8 @@ Rails.application.routes.draw do
     get 'higher' => 'works#move_higher', as: 'higher', on: :member
   end
 
+  resources :genres, only: [:show]
+
   root to: 'works#index'
   # get 'home/index' => 'home#index'
   namespace :login do

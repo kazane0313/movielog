@@ -25,12 +25,11 @@
               = f.search_field :title_cont
               = f.submit "search"
         .col-md-12.col-lg-6.text-left.text-lg-right{"data-aos" => "fade-up", "data-aos-delay" => "100"}
-          #filters.filters
-            %a.active{"data-filter" => "*", :href => "#"} ALL
-            %a{"data-filter" => ".web", :href => "#"} ACTION
-            %a{"data-filter" => ".design", :href => "#"} ROMANCE
-            %a{"data-filter" => ".branding", :href => "#"} DRAMA
-            %a{"data-filter" => ".photography", :href => "#"} ANIME
+          -# #filters.filters
+          =link_to "ALL", works_path
+          -Genre.all.each do |genre|
+            =link_to genre.name, genre_path(genre)
+
       #portfolio-grid.row.no-gutter{"data-aos" => "fade-up", "data-aos-delay" => "200"}
         -@works.each_with_index do |work, index|
           .item.web.col-sm-6.col-md-4.col-lg-4.mb-4

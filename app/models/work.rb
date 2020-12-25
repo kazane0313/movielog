@@ -2,6 +2,8 @@ class Work < ApplicationRecord
   mount_uploader :image, WorkImageUploader
 
   belongs_to :director
+  has_many :work_genres, dependent: :destroy
+  has_many :genres, through: :work_genres
 
   validates :title, presence: true
   validates :title, uniqueness: true

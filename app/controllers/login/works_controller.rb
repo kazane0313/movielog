@@ -49,6 +49,7 @@ class Login::WorksController < Login::ApplicationController
       :image,
       :image_cache,
       :remove_image,
+      genre_ids: []
     )
   end
   def set_work
