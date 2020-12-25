@@ -20,3 +20,12 @@
   border-radius: 50%;
   /* margin-left: 25%; */
 }
+
+.genre_tag {
+  color: white;
+  font-size: 10px;
+  font-weight: bold;
+  background-color: #17a2b8;
+  padding: 5px;
+  border-radius: 8%;
+}

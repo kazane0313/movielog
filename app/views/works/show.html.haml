@@ -38,7 +38,7 @@
           %h2=@work.title
           %p=@work.release
           -@work.genres.each do |genre|
-            =link_to genre.name, genre_path(genre)
+            =link_to genre.name, genre_path(genre), class: "genre_tag"
       .container
         .row.align-items-stretch
           .col-md-8{"data-aos" => "fade-up"}

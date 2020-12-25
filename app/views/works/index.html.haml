@@ -28,7 +28,7 @@
           -# #filters.filters
           =link_to "ALL", works_path
           -Genre.all.each do |genre|
-            =link_to genre.name, genre_path(genre)
+            =link_to genre.name.upcase, genre_path(genre)
 
       #portfolio-grid.row.no-gutter{"data-aos" => "fade-up", "data-aos-delay" => "200"}
         -@works.each_with_index do |work, index|
@@ -38,6 +38,8 @@
               .work-info
                 %h3=work.title
                 %span=work.release
+                %br
+                %span=work.director.name
               -# %img.img-fluid{:src => "/img/img_1.jpg"}/
               -if work.image.present?
                 =image_tag work.image_url(:thumb), class: 'img-fluid'
