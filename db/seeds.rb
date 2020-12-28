@@ -10,6 +10,7 @@ require 'nkf'
 POSTGRES_TABLES = [
   :works,
   :directors,
+  :genres,
 ]
 POSTGRES_TABLES.each do |table_name|
   next unless ActiveRecord::Base.connection.execute("select * from #{table_name};").num_tuples.zero?
